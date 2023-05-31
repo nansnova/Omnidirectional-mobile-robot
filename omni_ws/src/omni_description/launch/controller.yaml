@@ -1,0 +1,15 @@
+omni_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  r_revolute_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_revolute
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  l_revolute_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_revolute
+    pid: {p: 100.0, i: 0.01, d: 10.0}

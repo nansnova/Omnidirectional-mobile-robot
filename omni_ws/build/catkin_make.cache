@@ -1,0 +1,2 @@
+omni_description:omni_worlds
+-DCATKIN_DEVEL_PREFIX=/home/nancy/omni_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nancy/omni_ws/install -G Unix Makefiles

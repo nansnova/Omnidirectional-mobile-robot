@@ -1,0 +1,229 @@
+<?xml version="1.0" ?>
+<robot name="omni" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find omni_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find omni_description)/urdf/omni.trans" />
+<xacro:include filename="$(find omni_description)/urdf/omni.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0013726768106275611 0.000528522615322889 0.017172820277733414" rpy="0 0 0"/>
+    <mass value="7.823035985670266"/>
+    <inertia ixx="0.028412" iyy="0.04658" izz="0.050066" ixy="-0.00021" iyz="-0.000279" ixz="0.001309"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/base_link.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/base_link.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hokuyo_1">
+  <inertial>
+    <origin xyz="-3.5829709823902156e-07 3.8184287974077065e-07 0.0208839346500741" rpy="0 0 0"/>
+    <mass value="0.3480480361849981"/>
+    <inertia ixx="8.4e-05" iyy="8.4e-05" izz="5.4e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.008599 7.5e-05 -0.142912" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/hokuyo_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.008599 7.5e-05 -0.142912" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/hokuyo_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.0447944751571932 3.8411911981347505e-07 0.030959191600784447" rpy="0 0 0"/>
+    <mass value="0.5924464749290492"/>
+    <inertia ixx="0.000234" iyy="0.000644" izz="0.000711" ixy="-0.0" iyz="-0.0" ixz="-0.000116"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.018901 7.5e-05 -0.098912" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/camera_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.018901 7.5e-05 -0.098912" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/camera_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_wheel_2">
+  <inertial>
+    <origin xyz="-0.0002462051229046719 -0.009763204827847649 0.0007566320397488745" rpy="0 0 0"/>
+    <mass value="0.356444607835813"/>
+    <inertia ixx="8.9e-05" iyy="0.000135" izz="8.3e-05" ixy="-0.0" iyz="-0.0" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.077442 0.081775 0.020088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/r_wheel_2.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.077442 0.081775 0.020088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/r_wheel_2.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_wheel_1">
+  <inertial>
+    <origin xyz="-0.00024620484451849667 0.00976392382806783 0.0007566292528436748" rpy="0 0 0"/>
+    <mass value="0.35644606430630194"/>
+    <inertia ixx="8.9e-05" iyy="0.000135" izz="8.3e-05" ixy="0.0" iyz="0.0" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.077442 -0.087225 0.020088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/l_wheel_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.077442 -0.087225 0.020088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/l_wheel_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="hokuyo_j" type="fixed">
+  <origin xyz="0.0275 0.0 0.044" rpy="0 0 0"/>
+  <parent link="camera_1"/>
+  <child link="hokuyo_1"/>
+</joint>
+
+<joint name="camera_j" type="fixed">
+  <origin xyz="-0.018901 -7.5e-05 0.098912" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="r_revolute" type="continuous">
+  <origin xyz="0.077442 -0.081775 -0.020088" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="r_wheel_2"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="l_revolute" type="continuous">
+  <origin xyz="0.077442 0.087225 -0.020088" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="l_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>100</updateRate>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>l_revolute</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>r_revolute</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <wheelSeparation>0.17</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <wheelDiameter>0.06</wheelDiameter>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>5</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <robotBaseFrame>base_link</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
+  </plugin>
+</gazebo>
+
+<!-- hokuyo -->
+<gazebo reference="hokuyo_1">
+  <sensor type="gpu_ray" name="head_hokuyo_sensor">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>false</visualize>
+    <update_rate>40</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-1.570796</min_angle>
+          <max_angle>1.570796</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.10</min>
+        <max>30.0</max>
+        <resolution>0.01</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <!-- Noise parameters based on published spec for Hokuyo laser
+              achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+              stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+              reading. -->
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+      <topicName>/laser/scan</topicName>
+      <frameName>hokuyo_link</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+
+</robot>

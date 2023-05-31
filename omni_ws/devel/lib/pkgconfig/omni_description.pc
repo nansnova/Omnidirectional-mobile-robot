@@ -1,0 +1,8 @@
+prefix=/home/nancy/omni_ws/devel
+
+Name: omni_description
+Description: Description of omni_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

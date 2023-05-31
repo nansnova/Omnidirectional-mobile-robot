@@ -1,0 +1,8 @@
+prefix=/home/nancy/omni_ws/devel
+
+Name: omni_worlds
+Description: Description of omni_worlds
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
