@@ -1,7 +1,7 @@
 <launch>
 
 <rosparam file="$(find omni_description)/launch/controller.yaml" command="load"/>
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="omni" args="r_revolute_position_controller l_revolute_position_controller joint_state_controller "/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="omni" args="front_r_wheel_j_position_controller front_l_wheel_j_position_controller back_l_wheel_j_position_controller back_r_wheel_j_position_controller joint_state_controller "/>
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
   <remap from="/joint_states" to="/omni/joint_states"/>
 </node>

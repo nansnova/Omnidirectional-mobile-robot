@@ -7,9 +7,9 @@
 
 <link name="base_link">
   <inertial>
-    <origin xyz="-0.0013726768106275611 0.000528522615322889 0.017172820277733414" rpy="0 0 0"/>
-    <mass value="7.823035985670266"/>
-    <inertia ixx="0.028412" iyy="0.04658" izz="0.050066" ixy="-0.00021" iyz="-0.000279" ixz="0.001309"/>
+    <origin xyz="-0.09773323828228454 0.0007226627833107346 0.022411911514028184" rpy="0 0 0"/>
+    <mass value="4.252201155500529"/>
+    <inertia ixx="0.008087" iyy="0.02462" izz="0.024706" ixy="0.000186" iyz="-0.000351" ixz="0.003179"/>
   </inertial>
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -28,19 +28,19 @@
 
 <link name="hokuyo_1">
   <inertial>
-    <origin xyz="-3.5829709823902156e-07 3.8184287974077065e-07 0.0208839346500741" rpy="0 0 0"/>
+    <origin xyz="2.336606508279715e-08 3.8184287998466193e-07 0.020883564035625468" rpy="0 0 0"/>
     <mass value="0.3480480361849981"/>
-    <inertia ixx="8.4e-05" iyy="8.4e-05" izz="5.4e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    <inertia ixx="8.4e-05" iyy="8.4e-05" izz="5.4e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.008599 7.5e-05 -0.142912" rpy="0 0 0"/>
+    <origin xyz="0.093332 7.5e-05 -0.119283" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://omni_description/meshes/hokuyo_1.stl"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.008599 7.5e-05 -0.142912" rpy="0 0 0"/>
+    <origin xyz="0.093332 7.5e-05 -0.119283" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://omni_description/meshes/hokuyo_1.stl"/>
     </geometry>
@@ -49,63 +49,126 @@
 
 <link name="camera_1">
   <inertial>
-    <origin xyz="0.0447944751571932 3.8411911981347505e-07 0.030959191600784447" rpy="0 0 0"/>
+    <origin xyz="0.0447948568203564 3.841191200996773e-07 0.030958820986335858" rpy="0 0 0"/>
     <mass value="0.5924464749290492"/>
     <inertia ixx="0.000234" iyy="0.000644" izz="0.000711" ixy="-0.0" iyz="-0.0" ixz="-0.000116"/>
   </inertial>
   <visual>
-    <origin xyz="0.018901 7.5e-05 -0.098912" rpy="0 0 0"/>
+    <origin xyz="0.120832 7.5e-05 -0.075283" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://omni_description/meshes/camera_1.stl"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.018901 7.5e-05 -0.098912" rpy="0 0 0"/>
+    <origin xyz="0.120832 7.5e-05 -0.075283" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://omni_description/meshes/camera_1.stl"/>
     </geometry>
   </collision>
 </link>
 
-<link name="r_wheel_2">
+<link name="base_footprint_1">
   <inertial>
-    <origin xyz="-0.0002462051229046719 -0.009763204827847649 0.0007566320397488745" rpy="0 0 0"/>
-    <mass value="0.356444607835813"/>
+    <origin xyz="0.011015526351477817 -1.2132936514437287e-05 -0.02025971413965761" rpy="0 0 0"/>
+    <mass value="2.8579441590973205"/>
+    <inertia ixx="0.007001" iyy="0.015233" izz="0.021212" ixy="-6e-06" iyz="5e-06" ixz="0.00016"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.120832 7.5e-05 0.012717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/base_footprint_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.120832 7.5e-05 0.012717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/base_footprint_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_r_wheel_1">
+  <inertial>
+    <origin xyz="-0.0002458235682244632 -0.01366320983047506 0.0007562614815726718" rpy="0 0 0"/>
+    <mass value="0.35644460676611167"/>
     <inertia ixx="8.9e-05" iyy="0.000135" izz="8.3e-05" ixy="-0.0" iyz="-0.0" ixz="2e-06"/>
   </inertial>
   <visual>
-    <origin xyz="-0.077442 0.081775 0.020088" rpy="0 0 0"/>
+    <origin xyz="0.019989 0.084575 0.037717" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://omni_description/meshes/r_wheel_2.stl"/>
+      <mesh filename="package://omni_description/meshes/front_r_wheel_1.stl"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.077442 0.081775 0.020088" rpy="0 0 0"/>
+    <origin xyz="0.019989 0.084575 0.037717" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://omni_description/meshes/r_wheel_2.stl"/>
+      <mesh filename="package://omni_description/meshes/front_r_wheel_1.stl"/>
     </geometry>
   </collision>
 </link>
 
-<link name="l_wheel_1">
+<link name="front_l_wheel_1">
   <inertial>
-    <origin xyz="-0.00024620484451849667 0.00976392382806783 0.0007566292528436748" rpy="0 0 0"/>
-    <mass value="0.35644606430630194"/>
+    <origin xyz="-0.00024582318146064083 0.013663923828028529 0.0007562586384524256" rpy="0 0 0"/>
+    <mass value="0.35644606430630343"/>
     <inertia ixx="8.9e-05" iyy="0.000135" izz="8.3e-05" ixy="0.0" iyz="0.0" ixz="2e-06"/>
   </inertial>
   <visual>
-    <origin xyz="-0.077442 -0.087225 0.020088" rpy="0 0 0"/>
+    <origin xyz="0.019989 -0.084425 0.037717" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://omni_description/meshes/l_wheel_1.stl"/>
+      <mesh filename="package://omni_description/meshes/front_l_wheel_1.stl"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.077442 -0.087225 0.020088" rpy="0 0 0"/>
+    <origin xyz="0.019989 -0.084425 0.037717" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://omni_description/meshes/l_wheel_1.stl"/>
+      <mesh filename="package://omni_description/meshes/front_l_wheel_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_l_wheel_1">
+  <inertial>
+    <origin xyz="0.0007562654193716267 0.017563160142214207 0.000245765096680943" rpy="0 0 0"/>
+    <mass value="0.3564460643063053"/>
+    <inertia ixx="8.3e-05" iyy="0.000135" izz="8.9e-05" ixy="0.0" iyz="-0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.193332 -0.076975 0.037717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/back_l_wheel_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.193332 -0.076975 0.037717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/back_l_wheel_1.stl"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_r_wheel_1">
+  <inertial>
+    <origin xyz="0.0007562682625465444 -0.0175632098305587 0.0002457654835497994" rpy="0 0 0"/>
+    <mass value="0.35644460676611395"/>
+    <inertia ixx="8.3e-05" iyy="0.000135" izz="8.9e-05" ixy="-0.0" iyz="0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.193332 0.077575 0.037717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/back_r_wheel_1.stl"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.193332 0.077575 0.037717" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://omni_description/meshes/back_r_wheel_1.stl"/>
     </geometry>
   </collision>
 </link>
@@ -117,77 +180,44 @@
 </joint>
 
 <joint name="camera_j" type="fixed">
-  <origin xyz="-0.018901 -7.5e-05 0.098912" rpy="0 0 0"/>
+  <origin xyz="-0.120832 -7.5e-05 0.075283" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="camera_1"/>
 </joint>
 
-<joint name="r_revolute" type="continuous">
-  <origin xyz="0.077442 -0.081775 -0.020088" rpy="0 0 0"/>
+<joint name="Rigid 17" type="fixed">
+  <origin xyz="-0.120832 -7.5e-05 -0.012717" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="r_wheel_2"/>
-  <axis xyz="0.0 1.0 0.0"/>
+  <child link="base_footprint_1"/>
 </joint>
 
-<joint name="l_revolute" type="continuous">
-  <origin xyz="0.077442 0.087225 -0.020088" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="l_wheel_1"/>
+<joint name="front_r_wheel_j" type="continuous">
+  <origin xyz="0.100843 -0.0845 -0.025" rpy="0 0 0"/>
+  <parent link="base_footprint_1"/>
+  <child link="front_r_wheel_1"/>
   <axis xyz="-0.0 1.0 0.0"/>
 </joint>
 
-<gazebo>
-  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+<joint name="front_l_wheel_j" type="continuous">
+  <origin xyz="0.100843 0.0845 -0.025" rpy="0 0 0"/>
+  <parent link="base_footprint_1"/>
+  <child link="front_l_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
 
-    <!-- Plugin update rate in Hz -->
-    <updateRate>100</updateRate>
+<joint name="back_l_wheel_j" type="continuous">
+  <origin xyz="-0.0725 0.07705 -0.025" rpy="0 0 0"/>
+  <parent link="base_footprint_1"/>
+  <child link="back_l_wheel_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
 
-    <!-- Name of left joint, defaults to `left_joint` -->
-    <leftJoint>l_revolute</leftJoint>
-
-    <!-- Name of right joint, defaults to `right_joint` -->
-    <rightJoint>r_revolute</rightJoint>
-
-    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
-    <wheelSeparation>0.17</wheelSeparation>
-
-    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
-    <wheelDiameter>0.06</wheelDiameter>
-
-    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
-    <wheelAcceleration>1.0</wheelAcceleration>
-
-    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
-    <wheelTorque>5</wheelTorque>
-
-    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
-    <commandTopic>cmd_vel</commandTopic>
-
-    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
-    <odometryTopic>odom</odometryTopic>
-
-    <!-- Odometry frame, defaults to `odom` -->
-    <odometryFrame>odom</odometryFrame>
-
-    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
-    <robotBaseFrame>base_link</robotBaseFrame>
-
-    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
-    <odometrySource>1</odometrySource>
-
-    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
-    <publishWheelTF>true</publishWheelTF>
-
-    <!-- Set to true to publish transforms for the odometry, defaults to true -->
-    <publishOdom>true</publishOdom>
-
-    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
-    <publishWheelJointState>true</publishWheelJointState>
-
-    <!-- Set to true to swap right and left wheels, defaults to true -->
-    <legacyMode>false</legacyMode>
-  </plugin>
-</gazebo>
+<joint name="back_r_wheel_j" type="continuous">
+  <origin xyz="-0.0725 -0.0775 -0.025" rpy="0 0 0"/>
+  <parent link="base_footprint_1"/>
+  <child link="back_r_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
 
 <!-- hokuyo -->
 <gazebo reference="hokuyo_1">
@@ -224,6 +254,16 @@
       <frameName>hokuyo_link</frameName>
     </plugin>
   </sensor>
+</gazebo>
+
+<gazebo>
+  <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <odometryRate>20.0</odometryRate>
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+  </plugin>
 </gazebo>
 
 </robot>

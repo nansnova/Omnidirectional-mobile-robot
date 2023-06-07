@@ -1,23 +1,45 @@
 <?xml version="1.0" ?>
 <robot name="omni" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="r_revolute_tran">
+<transmission name="front_r_wheel_j_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="r_revolute">
+  <joint name="front_r_wheel_j">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="r_revolute_actr">
+  <actuator name="front_r_wheel_j_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="l_revolute_tran">
+<transmission name="front_l_wheel_j_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="l_revolute">
+  <joint name="front_l_wheel_j">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="l_revolute_actr">
+  <actuator name="front_l_wheel_j_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="back_l_wheel_j_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="back_l_wheel_j">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="back_l_wheel_j_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="back_r_wheel_j_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="back_r_wheel_j">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="back_r_wheel_j_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
